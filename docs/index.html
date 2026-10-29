@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alchemy 小白中文教程 · xianyu110</title>
+  <meta name="description" content="alchemy-run/alchemy 社区非官方中文入门：Infrastructure-as-Effects、安装、Cloudflare 部署。" />
+  <style>
+    :root { color-scheme: light dark; --bg:#0f1419; --fg:#e7ecf3; --muted:#9aa7b5; --card:#1a2330; --accent:#6cb6ff; --ok:#3dd68c; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f6f8fb; --fg:#1b2430; --muted:#5b6b7c; --card:#fff; --accent:#0066cc; --ok:#0a7a44; }
+    }
+    body { margin:0; font-family: ui-sans-serif, system-ui, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; }
+    main { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 .5rem; }
+    .sub { color: var(--muted); margin-bottom: 1.5rem; }
+    .card { background: var(--card); border-radius: 12px; padding: 1.25rem 1.35rem; margin: 1rem 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+    a { color: var(--accent); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+    pre { background: #0b1220; color: #d7e2f0; padding: 1rem; border-radius: 8px; overflow:auto; }
+    @media (prefers-color-scheme: light) { pre { background:#111827; } }
+    .ok { color: var(--ok); font-weight: 600; }
+    ul { padding-left: 1.2rem; }
+    footer { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+    img.shot { max-width:100%; height:auto; border-radius:8px; margin:.75rem 0; border:1px solid rgba(127,127,127,.25); }
+    figcaption { color:var(--muted); font-size:.85rem; margin:.25rem 0 1rem; }
+    .tag-real { color:var(--ok); font-weight:600; }
+    .tag-schema { color:#e6a23c; font-weight:600; }
+
+  </style>
+</head>
+<body>
+<main>
+  <h1>Alchemy 小白中文教程</h1>
+  <p class="sub">社区非官方导读 · 上游 <a href="https://github.com/alchemy-run/alchemy">alchemy-run/alchemy</a> · <a href="https://alchemy.run">alchemy.run</a></p>
+
+  <div class="card">
+    <p><span class="ok">完整图文教程</span>在 GitHub README（安装、演示、踩坑、合规）：</p>
+    <p><a href="https://github.com/xianyu110/awesome-alchemy-zh#readme"><strong>打开 README →</strong></a></p>
+  </div>
+
+  <div class="card">
+    <h2>30 秒上手</h2>
+    <pre>bun add alchemy@latest @alchemy.run/cloudflare@latest effect @effect/platform-bun @effect/platform-node
+bunx alchemy --help
+alchemy profile edit --add Cloudflare
+alchemy deploy</pre>
+  </div>
+
+  <div class="card">
+    <h2>截图</h2>
+    <figure>
+      <img class="shot" src="images/01-install-help.png" alt="alchemy 安装与 help" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · bun add + alchemy --version / --help</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/02-profile-help.png" alt="alchemy profile help" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · alchemy profile --help</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/03-runtime.png" alt="运行时版本" loading="lazy" />
+      <figcaption><span class="tag-real">真实截图</span> · Bun / Node 与官方前置对照</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="images/04-deploy-schematic.png" alt="deploy 示意图" loading="lazy" />
+      <figcaption><span class="tag-schema">示意图</span> · CF 登录 + deploy（需账号，未实拍）</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h2>记住三件事</h2>
+    <ul>
+      <li>官方前置：<strong>Bun</strong> 或 <strong>Node.js 24.11.1+</strong> + Cloudflare 账号</li>
+      <li>先 <code>alchemy profile edit --add Cloudflare</code>，再 <code>plan</code> / <code>deploy</code></li>
+      <li>v2 仍在 <strong>beta</strong>，以官网文档为准</li>
+    </ul>
+  </div>
+
+  <footer>
+    教程文本 MIT · 上游 Apache-2.0 · 与 alchemy-run 无官方隶属 · 2026-10-29
+  </footer>
+</main>
+</body>
+</html>
